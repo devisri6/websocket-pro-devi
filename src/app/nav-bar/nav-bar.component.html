@@ -1,0 +1,18 @@
+<nav class="block w-full px-4 py-2 mx-auto bg-white bg-opacity-90 sticky top-3 shadow-lg lg:px-8 lg:py-3 backdrop-blur-lg backdrop-saturate-150 z-[9999] mt-10 relative">
+    <div class="container flex flex-wrap text-slate-800 items-center justify-between relative">
+        <h2 class="font-semibold text-lg text-slate-800">Project</h2>
+        <i class='far fa-bell text-xl cursor-pointer relative' (click)="onClick()"></i>
+        
+        <!-- Pop-up positioned directly below the bell icon -->
+        <div *ngIf="show_pop_up" class="absolute top-full right-0 w-80 bg-gray-100 rounded-lg shadow-lg p-4 mt-2">
+            <h2 class="font-semibold text-lg">Notifications</h2>
+            <div *ngFor="let notification of unreadNotifications">
+                <p class="mt-3 mb-3">{{ notification.msg }}</p>
+                <hr class="text-gray-600 mb-3 mt-3">
+            </div>
+            <div class="justify-center mt-10">
+                <button class="cursor-pointer text-lg text-purple-600 hover:text-purple-700 ml-20" (click)="showPage()">All Notification</button>
+            </div>
+        </div>
+    </div>
+</nav>
